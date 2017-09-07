@@ -3,9 +3,7 @@ var fs = require('fs');
 
 
 var server = http.createServer(function (request, response){
-    // see what URL the clients are requesting:
-    console.log('client request URL: ', request.url);
-    // this is how we do routing:
+    
     if(request.url === '/cars') {
         fs.readFile('./views/cars.html', 'utf8', function (errors, contents){
             response.writeHead(200, {'Content-Type': 'text/html'});  // send data about response
